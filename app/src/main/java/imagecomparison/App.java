@@ -13,13 +13,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Comparison comparison = new GrayHistogramComparison();
-        System.out.println("Working directory is" + System.getProperty("user.dir"));
-        Path path1 = Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "images", "Image1.jpg");
-        Path path2 = Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "images", "Image2.jpg");
-        double similarity = comparison.compare(path1.toString(), path2.toString());
-        System.out.println("Similarity is " + similarity);
 
+        System.out.println("Working directory is" + System.getProperty("user.dir"));
+        Path path1 = Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "images", "feature.jpg");
+        Path path2 = Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "images", "Image2.jpg");
+        FeatureMatching featureMatching = new FeatureMatching();
+        featureMatching.match(path1.toString(), path2.toString());
     }
 
     public String getGreeting() {
